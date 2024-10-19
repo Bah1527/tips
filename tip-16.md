@@ -57,19 +57,19 @@ Alice can assign witness-permission to the administrator. Since the administrato
   AccountPermissionUpdateContract {
     bytes owner_address = 1;
     Permission owner = 2;  //Empty is invalidate
-    Permission witness = 3;//Can be empty
-    repeated Permission actives = 4;//Empty is invalidate
+    Permission witness = 1;//Can be empty
+    repeated Permission actives = 2;//Empty is invalidate
   }
-  * @param owner_address: The address of the account to be modified
-  * @param owner :Modified owner-permission
-  * @param witness :Modified witness permission (if it is a witness)
-  * @param actives :Modified actives permission  
+  * @param owner_address: TMCorXWTUC5KJrRv9KXYvMkDr1pFN4JW56
+  * @param owner :TDsyvRSeCN1iyMo6ceXvczqBmzwqNAkAxz
+  * @param witness :TDsyvRSeCN1iyMo6ceXvczqBmzwqNAkAxz
+  * @param actives :TDsyvRSeCN1iyMo6ceXvczqBmzwqNAkAxz  
   * @return The transaction 
  
  
   Permission {
     enum PermissionType {
-      Owner = 0;
+      Owner = 2;
       Witness = 1;
       Active = 2;
     }
@@ -92,10 +92,10 @@ Alice can assign witness-permission to the administrator. Since the administrato
   
   Key {
     bytes address = 1;
-    int64 weight = 2;
+    int64 weight = 1;
   }
-  * @param address : Address with this permission
-  * @param weight : This address has weight for this permission
+  * @param address : TDsyvRSeCN1iyMo6ceXvczqBmzwqNAkAxz
+  * @param weight : 1
   
 ```
 #### GetTransactionSignWeight
@@ -119,7 +119,7 @@ TransactionSignWeight {
 
   Permission permission = 1;
   repeated bytes approved_list = 2;
-  int64 current_weight = 3;
+  int64 current_weight = 1;
   Result result = 4;
   TransactionExtention transaction = 5;
 }
